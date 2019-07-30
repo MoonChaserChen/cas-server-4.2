@@ -43,6 +43,19 @@
             <type>war</type>
             <scope>runtime</scope>
         </dependency>
+        <!--cas-server-jdbc-->
+        <dependency>
+            <groupId>org.jasig.cas</groupId>
+            <artifactId>cas-server-support-jdbc</artifactId>
+            <version>${cas.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <!--mysql-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.15</version>
+        </dependency>
     </dependencies>
 
 

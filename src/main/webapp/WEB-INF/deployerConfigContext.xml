@@ -26,10 +26,21 @@
         <ref bean="rememberMeAuthenticationMetaDataPopulator" />
     </util:list>
 
+    <bean id="datasource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="${cas.mysql.driverClass}"/>
+        <property name="jdbcUrl" value="${cas.mysql.jdbcUrl}"/>
+        <property name="user" value="${cas.mysql.user}"/>
+        <property name="password" value="${cas.mysql.password}"/>
+    </bean>
+
+    <bean id="authenticationHandler" class="org.jasig.cas.adaptors.jdbc.QueryAndEncodeDatabaseAuthenticationHandler">
+        <property name="dataSource" ref="datasource"/>
+    </bean>
+
     <bean id="attributeRepository" class="org.jasig.services.persondir.support.NamedStubPersonAttributeDao"
           p:backingMap-ref="attrRepoBackingMap" />
 
-    <alias name="acceptUsersAuthenticationHandler" alias="primaryAuthenticationHandler" />
+    <alias name="authenticationHandler" alias="primaryAuthenticationHandler" />
     <alias name="personDirectoryPrincipalResolver" alias="primaryPrincipalResolver" />
 
     <util:map id="attrRepoBackingMap">
