@@ -39,7 +39,7 @@
 
     <bean id="attributeRepository" class="org.jasig.services.persondir.support.jdbc.SingleRowJdbcPersonAttributeDao">
         <constructor-arg index="0" ref="datasource"/>
-        <constructor-arg index="1" value="select ua.mobile, ua.email, up.user_id, up.school_name, up.company_name
+        <constructor-arg index="1" value="select ua.username, ua.mobile, ua.email, up.user_id, up.school_name, up.company_name
          from user_profile up join user_auth ua on up.user_id = ua.id where ua.{0}"/>
         <property name="queryAttributeMapping">
             <map>
