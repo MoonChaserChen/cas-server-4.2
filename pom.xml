@@ -62,6 +62,13 @@
             <artifactId>commons-collections4</artifactId>
             <version>4.1</version>
         </dependency>
+
+        <!--方便查看源码-->
+        <dependency>
+            <groupId>org.jasig.cas</groupId>
+            <artifactId>cas-server-webapp</artifactId>
+            <version>${cas.version}</version>
+        </dependency>
     </dependencies>
 
 
