@@ -33,8 +33,13 @@
         <property name="password" value="${cas.mysql.password}"/>
     </bean>
 
+    <bean id="jdbcPrincipalNameTransformer" class="ink.akira.cas.authentication.JdbcPrincipalNameTransformer">
+        <property name="dataSource" ref="datasource"/>
+        <property name="sql" value="${cas.jdbc.authn.query.username.sql}"/>
+    </bean>
     <bean id="authenticationHandler" class="org.jasig.cas.adaptors.jdbc.QueryAndEncodeDatabaseAuthenticationHandler">
         <property name="dataSource" ref="datasource"/>
+        <property name="principalNameTransformer" ref="jdbcPrincipalNameTransformer"/>
     </bean>
 
     <bean id="attributeRepository" class="org.jasig.services.persondir.support.jdbc.SingleRowJdbcPersonAttributeDao">
