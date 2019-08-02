@@ -8,7 +8,9 @@
     > 添加一个CAS client进行登录验证
 3. [授权子应用](/docs/授权子应用.md)
     > 在服务端授权子系统集成
-4. [数据库用户名密码验证](/docs/数据库用户名密码验证.md)
+4. [CAS-Server与http](/docs/CAS-Server与http.md)
+    > 允许CAS Server运行在http环境
+5. [数据库用户名密码验证](/docs/数据库用户名密码验证.md)
     > 以mysql中存放的用户名及密码对登录进行验证
     
 ### 原理篇
