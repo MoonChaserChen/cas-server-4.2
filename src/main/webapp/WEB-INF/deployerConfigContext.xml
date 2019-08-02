@@ -39,8 +39,7 @@
 
     <bean id="attributeRepository" class="org.jasig.services.persondir.support.jdbc.SingleRowJdbcPersonAttributeDao">
         <constructor-arg index="0" ref="datasource"/>
-        <constructor-arg index="1" value="select ua.username, ua.mobile, ua.email, up.user_id, up.school_name, up.company_name
-         from user_profile up join user_auth ua on up.user_id = ua.id where ua.{0}"/>
+        <constructor-arg index="1" value="${cas.jdbc.authn.query.attribute.sql}"/>
         <property name="queryAttributeMapping">
             <map>
                 <!--这里的key需写username，value对应数据库用户名字段-->
