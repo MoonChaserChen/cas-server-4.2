@@ -35,7 +35,7 @@
 
     <bean id="jdbcPrincipalNameTransformer" class="ink.akira.cas.authentication.JdbcPrincipalNameTransformer">
         <property name="dataSource" ref="datasource"/>
-        <property name="sql" value="${cas.jdbc.authn.query.username.sql}"/>
+        <property name="sql" value="${cas.jdbc.authn.query.userid.sql}"/>
     </bean>
     <bean id="authenticationHandler" class="org.jasig.cas.adaptors.jdbc.QueryAndEncodeDatabaseAuthenticationHandler">
         <property name="dataSource" ref="datasource"/>
@@ -48,7 +48,7 @@
         <property name="queryAttributeMapping">
             <map>
                 <!--这里的key需写username，value对应数据库用户名字段-->
-                <entry key="username" value="username"/>
+                <entry key="username" value="id"/>
             </map>
         </property>
     </bean>
