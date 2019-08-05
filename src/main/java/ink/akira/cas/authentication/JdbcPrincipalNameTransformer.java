@@ -28,9 +28,10 @@ public class JdbcPrincipalNameTransformer implements PrincipalNameTransformer {
         try {
             return jdbcTemplate.queryForObject(this.sql, params, String.class);
         } catch (EmptyResultDataAccessException e) {
+            logger.error("Found no result for formUserId: {}", formUserId);
             return formUserId;
         } catch (IncorrectResultSizeDataAccessException e) {
-            logger.error("Found multiple result for user login_name");
+            logger.error("Found multiple result for formUserId: {}", formUserId);
             return formUserId;
         }
     }
