@@ -1,5 +1,5 @@
 # cas-server-4.2
-基于cas-server 4.2.7的自定义改造
+基于cas-server 4.2.7的自定义改造。
 
 ### 实践篇
 1. [快速开始](/docs/快速开始.md)
